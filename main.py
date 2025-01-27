@@ -7,7 +7,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 # Read the Jinja2 email template
-with open("template.html", "r") as file:
+with open("new-email.html", "r") as file:
     template_str = file.read()
 
 jinja_template = Template(template_str)
@@ -38,6 +38,7 @@ for person in people_data:
         "greeting": f"Hello {person['name']}!",
         "message": "This is a sample email generated using Jinja2.",
         "sender_name": "GFG",
+        "points": "1000"
     }
     email_content = jinja_template.render(email_data)
 
